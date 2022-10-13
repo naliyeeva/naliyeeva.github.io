@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Contact</title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+    <body class="contactBody">
+        <form enctype="text/plain" action="mailto:naliyeva8289@ada.edu.az" method="post" class="contactForm">            
+            <label for="subject" class="labelForFields">Subject</label>
+            <input type="text" name="subject" placeholder="Subject" class="fields">
+            <label for="email" class="labelForFields">Email</label>
+            <input type="email" name="email" placeholder="Email" class="fields">
+            <label for="message" class="labelForFields">Message</label>
+            <textarea name="message" rows="" cols="" class="fields" style="resize: none;"></textarea>
+            <div class="subscribeWrapper">  
+                <label for="subscribe" class="subscribe">Subscribe</label>
+                <input type="checkbox" name="subscribe" class="subscribe">
+            </div>
+            <button type="submit" class="submitBtn">Submit</button>
+        </form>
+    </body>
+</html>

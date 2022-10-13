@@ -1,0 +1,355 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+* {
+    font-family: 'Roboto', sans-serif;
+}
+
+.bodyMain {
+    margin: auto;
+    background-color: #23252C;
+    color: #EEEEEE;
+}
+
+.infoHeadings {
+    font-style: italic;
+}
+
+#workplace {
+    font-weight: bold;
+}
+
+.personalInfo {
+    font-weight: bold;
+}
+
+
+.skillsList {
+    list-style: circle;
+    transition: 0.3s;
+}
+
+.skillsList:hover {
+    color: #FF6768;
+}
+
+.myProfileImage {
+    height: 200px;
+    object-fit: contain;
+}
+
+.tableContainer {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.educationTable {
+    background-color: antiquewhite;
+}
+
+.tableContents {
+    border: 1px solid;
+    padding: 5px;
+    /* margin: 10px auto; */
+}
+
+.labels {
+    font-weight: bold;
+    background-color: wheat;
+}
+
+.data {
+    background-color: cornsilk;
+}
+
+.contactBody {
+    background-color: #23252C;
+}
+
+.contactForm {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    align-items: center;
+}
+
+.labelForFields, .subscribe {
+    margin: 10px 0;
+    color: #f1f1f1;
+}
+
+.fields {
+    padding: 5px 10px;
+    width: 20%;
+    margin: 5px 0; 
+    border: transparent;
+    border-radius: 5px;
+    transition: 0.5 ease-in-out;
+}
+
+.fields:focus {
+    outline: none;
+    resize: none;
+    border: 1px solid #3787e2;
+}
+
+.submitBtn {
+    border: transparent;
+    border-radius: 3px;
+    background-color: green;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 0;
+}
+
+.subscribeWrapper {
+    margin: 5px 0;
+}
+
+.profileInfo, .personalInfo {
+    display: inline-block;
+    margin: 34px 0;
+    z-index: 1;
+}
+
+.personalInfo {
+    position: relative;
+    top: -95px;
+}
+
+.navbar {
+    background-color: #17223B;
+    color: white;
+    height: 36px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 5px;
+    z-index: 2;
+}
+
+.navbarItem {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    padding: 5px;
+}
+
+.navbarItems, .footerItems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.navbarItem:hover, .footerItem:hover {
+    text-decoration: underline;
+}
+  
+.footer {
+    background-color: #17223B;
+    width: 100%;
+    padding: 5px;
+    height: 36px;
+}
+
+.footerItem {
+    color: white;
+    text-decoration: none;
+    margin: 15px;
+    padding: 14px 10px;
+}
+
+.galleryBody {
+    background-color: #23252C;
+    color: #f1f1f1;
+}
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+}
+
+.galleryPhoto {
+    height: 200px;
+    filter: grayscale(100%);
+    transition: all 0.5s ease;
+}
+
+.galleryPhoto:hover {
+    filter: grayscale(0%);
+}
+
+.galleryHeading {
+    font-weight: 100;
+    font-size: 30px;
+    text-align: center;
+}
+
+.galleryText {
+    text-align: center;
+}
+
+.bodyDigitalCard {
+    background-color: #23252C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.digitalCardContainer {
+    width: 30%;
+    margin: 53px auto;
+}
+
+.card {
+    width: 90%;
+    background-color: #000000;
+    border-radius: 10px;
+    border: 1px solid #ababab;
+    margin: 35px auto;
+}
+
+.imgContainer {
+    width: 100%;
+}
+
+.cardImage {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.cardName {
+    text-align: center;
+    color: #f1f1f1;
+}
+
+.introDatas {
+    text-align: center;
+    font-weight: 400;
+}
+
+.myRole {
+    color: #F3BF99;
+    margin: 8px 0 8px 0;
+}
+
+.myEmail {
+    color: #f5f5f5;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.contactButtons {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.btn {
+    width: 115px;
+    height: 35px;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.icons {
+    margin-right: 2px;
+}
+
+.emailBtn {
+    background-color: #ffffff;
+    border: 1px solid #D1D5DB;
+    color: #374151;
+}
+
+.emailBtn:hover, .linkedinBtn:hover {
+    background-color: #575758;
+    border: 1px solid #e7e8ea;
+    color: #f7f8fa;
+}
+
+.linkedinBtn {
+    background-color: #5093E2;
+    border: 1px solid #3787e2;
+    color: #ffffff;
+}
+
+.cardContent {
+    padding: 13px 50px;
+}
+
+.cardInfoHeadings {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #F5F5F5;
+}
+
+.infoTexts {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.6;
+    color: #DCDCDC;
+}
+
+.socialIconsContainer {
+    display: flex;
+    justify-content: space-around;
+    width: 70%;
+    margin: auto;
+}
+
+.socialIcons {
+    vertical-align: middle;
+    font-size: 1.5rem;
+    text-align: center;
+    width: 25px;
+    height: 25px;
+    background-color: #918E9B;
+    padding: 2px;
+    border-radius: 3px;
+}
+
+.socialIcons:hover {
+    background-color: #c7c6c9;
+}
+
+.cardFooter {
+    background: #161619;
+    padding: 15px 0;
+    border-radius: 10px;
+}
+
+.nameSurname {
+    margin-left: 9px;
+    transition: 0.5;
+}
+
+.nameSurname:hover {
+    font-style: italic;
+}
+
+.profileBottom {
+    margin-left: 9px;
+}
+
+.educationBody {
+    background-color: #23252C;
+}
+
+.active {
+    background-color: #f1f1f1;
+    color: #23252C;
+    text-decoration: none;
+}
+
+.active:hover {
+    text-decoration: none;
+}
