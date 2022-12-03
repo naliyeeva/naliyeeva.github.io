@@ -16,6 +16,19 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
+    background-color: #FFFFFF;
+    padding: 5px;
+    height: 400px;
+    width: 300px;
+    margin: 30px auto;
+    border-radius: 10px;
+    color: #5c1f91;
+    background: #e0cbf4;
+}
+
+.weather-items {
+    margin: 2px;
 }
 
 button, select, input {

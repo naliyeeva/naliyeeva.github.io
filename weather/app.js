@@ -5,7 +5,6 @@ App = {
         App.userInput.addEventListener('change', this.changeUserInput)
         App.getWeather.addEventListener('click', this.getWeatherFromApi)
     },
-
     degreeToDirection(degree){
         const deg =  Math.floor((degree / 45) + 0.5);
         const directions = ["N","NE","E", "SE","S","SW","W","NW"];
@@ -54,7 +53,7 @@ App = {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                document.getElementById('country-name').innerHTML = data.data.country;
+                document.getElementById('country-name').innerHTML = `<b>Country</b>: ${data.data.country}`;
             })
             .catch(err => {
                 console.log(err)
@@ -69,24 +68,27 @@ App = {
                 
                 console.log(data)
 
-               document.getElementById('city-name').innerHTML = data.name;
+               document.getElementById('city-name').innerHTML = `<b>City</b>: ${data.name}`;
                data.weather.map(item => {
                 let oldRes = document.getElementById('condition').innerHTML
-                document.getElementById('condition').innerHTML = oldRes + "<br>" + item.main
+                let condition = oldRes + " " + item.main;
+                document.getElementById('condition').innerHTML = `<b>Condition</b>: ${condition.toLowerCase()}`;
+
                })
                data.weather.map(item => {
                 let oldRes = document.getElementById('description').innerHTML
-                document.getElementById('description').innerHTML = oldRes + "<br>" + item.description
+                let description = oldRes + " " + item.description;
+                document.getElementById('description').innerHTML = `<b>Description</b>: ${description.toLowerCase()}`
                })
-               document.getElementById('temperature').innerHTML = App.tempConversion(data.main.temp)
-               document.getElementById('min-temp').innerHTML = App.tempConversion(data.main.temp_min)
-               document.getElementById('max-temp').innerHTML = App.tempConversion(data.main.temp_max)
-               document.getElementById('real-feel').innerHTML = App.tempConversion(data.main.feels_like)
-               document.getElementById('humidity').innerHTML = data.main.humidity;
-               document.getElementById('pressure').innerHTML = data.main.pressure;
-               document.getElementById('wind-speed').innerHTML = data.wind.speed;
-               document.getElementById('wind-direction').innerHTML = `${data.wind.deg}, ${App.degreeToDirection(data.wind.deg)}`;
-               document.getElementById('date-of-response').innerHTML = new Date(data.dt)
+               document.getElementById('temperature').innerHTML = `<b>Temperature</b>: ${App.tempConversion(data.main.temp)} ℃`
+               document.getElementById('min-temp').innerHTML = `<b>Mininimum temperature</b>: ${App.tempConversion(data.main.temp_min)} ℃`
+               document.getElementById('max-temp').innerHTML = `<b>Maximum temperature</b>: ${App.tempConversion(data.main.temp_max)} ℃`
+               document.getElementById('real-feel').innerHTML = `<b>Real-feel</b>: ${App.tempConversion(data.main.feels_like)} ℃`
+               document.getElementById('humidity').innerHTML = `<b>Humidity</b>: ${data.main.humidity} %`;
+               document.getElementById('pressure').innerHTML = `<b>Pressure</b>: ${data.main.pressure} Pa`;
+               document.getElementById('wind-speed').innerHTML = `<b>Wind-speed</b>: ${data.wind.speed} m/s`;
+               document.getElementById('wind-direction').innerHTML = `<b>Wind-direction</b>: ${data.wind.deg}, ${App.degreeToDirection(data.wind.deg)}`;
+               document.getElementById('date-of-response').innerHTML = `<b>Response</b>: ${new Date(data.dt).toDateString()}`
 
 
                console.log(data.dt)
