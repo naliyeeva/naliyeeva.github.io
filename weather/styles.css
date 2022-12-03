@@ -1,0 +1,34 @@
+body {
+    background: url('./image.jpeg') no-repeat #5c1f91;
+    background-position: center;
+    background-size: cover;
+}
+
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 10px;
+    height: 100%;
+}
+
+button, select, input {
+    padding: 5px;
+    color: #5c1f91;
+    background: #e0cbf4;
+    border: 1px solid transparent;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px;
+    height: 40px;
+    width: 200px;
+    cursor: pointer;
+}
+
+#getWeather {
+    color: white;
+    background: #5c1f91;
+}

@@ -5,25 +5,25 @@
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <select name="userInput" id="userInput">
-            <option value="city">City Name</option>
-            <option value="latlong">Latitude and Longitude</option>
-            <option value="geo">Current Geolocation</option>
-        </select>
+        <div class="container">
+            <select name="userInput" id="userInput">
+                <option value="city">City Name</option>
+                <option value="latlong">Latitude and Longitude</option>
+                <option value="geo">Current Geolocation</option>
+            </select>
 
-        <div class="input-block" id="city-block">
-            <label>Cityname</label>
-            <input type="text" id="city" />
+            <div class="input-block" id="city-block">
+                <input type="text" id="city" placeholder="Cityname"/>
+            </div>
+    
+            <div class="input-block" id="latlong-block" style="display: none">
+                <input type="text" id="lat" value="40.409264" placeholder="Latitude"/>
+                <input type="text" id="long" value="49.867092" placeholder="Longitude"/>
+            </div>
+    
+            <button type="button" id="getWeather">Get Weather</button>
         </div>
 
-        <div class="input-block" id="latlong-block" style="display: none">
-            <label>Latitude</label>
-            <input type="text" id="lat" value="40.409264"/>
-            <label>Longitude</label>
-            <input type="text" id="long" value="49.867092"/>
-        </div>
-
-        <button type="button" id="getWeather">Get Weather</button>
 
 
         <script src="./app.js" ></script>
