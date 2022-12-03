@@ -23,6 +23,7 @@ App = {
         document.querySelector(`#${userInputType}-block`).style.display = 'block'
     },
     getWeatherFromApi() {
+        document.getElementById('weather').style.display = 'flex';
         let lat = document.getElementById('lat').value
         let lon = document.getElementById('long').value
         let city  = document.getElementById('city').value.trim()
