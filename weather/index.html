@@ -6,9 +6,29 @@
     </head>
     <body>
         <select name="userInput" id="userInput">
-            <option value="cityName">City Name</option>
+            <option value="city">City Name</option>
             <option value="latlong">Latitude and Longitude</option>
-            <option value="geolocation">Current Geolocation</option>
+            <option value="geo">Current Geolocation</option>
         </select>
+
+        <div class="input-block" id="city-block">
+            <label>Cityname</label>
+            <input type="text" id="city" />
+        </div>
+
+        <div class="input-block" id="latlong-block" style="display: none">
+            <label>Latitude</label>
+            <input type="text" id="lat" value="40.409264"/>
+            <label>Longitude</label>
+            <input type="text" id="long" value="49.867092"/>
+        </div>
+
+        <button type="button" id="getWeather">Get Weather</button>
+
+
+        <script src="./app.js" ></script>
+
+        <!-- https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key} -->
+        <!-- 14d29a796f48584f82e8287e911bc6a9 -->
     </body>
 </html>
