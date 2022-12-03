@@ -13,7 +13,7 @@ App = {
     },
     tempConversion(kelvin) {
         kelvin = parseFloat(kelvin);
-        return kelvin - 273.15;
+        return Math.round(kelvin - 273.15);
     },
     changeUserInput() {
         let userInputType = document.getElementById('userInput').value
@@ -44,15 +44,17 @@ App = {
 
 
         if(userInputType === 'city') {
-            let country = fetch('https://countriesnow.space/api/v0.1/countries/population/cities', {
+            fetch('https://countriesnow.space/api/v0.1/countries/population/cities', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
                 body: JSON.stringify({ city: city }),
             })
-            .then(res => {
-                console.log(res)
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                document.getElementById('country-name').innerHTML = data.data.country;
             })
             .catch(err => {
                 console.log(err)
@@ -60,8 +62,35 @@ App = {
         }
 
         fetch(url)
-            .then(res => {
-               console.log(res)         
+            .then(res => res.json())
+            .then(data => {
+
+
+                
+                console.log(data)
+
+               document.getElementById('city-name').innerHTML = data.name;
+               data.weather.map(item => {
+                let oldRes = document.getElementById('condition').innerHTML
+                document.getElementById('condition').innerHTML = oldRes + "<br>" + item.main
+               })
+               data.weather.map(item => {
+                let oldRes = document.getElementById('description').innerHTML
+                document.getElementById('description').innerHTML = oldRes + "<br>" + item.description
+               })
+               document.getElementById('temperature').innerHTML = App.tempConversion(data.main.temp)
+               document.getElementById('min-temp').innerHTML = App.tempConversion(data.main.temp_min)
+               document.getElementById('max-temp').innerHTML = App.tempConversion(data.main.temp_max)
+               document.getElementById('real-feel').innerHTML = App.tempConversion(data.main.feels_like)
+               document.getElementById('humidity').innerHTML = data.main.humidity;
+               document.getElementById('pressure').innerHTML = data.main.pressure;
+               document.getElementById('wind-speed').innerHTML = data.wind.speed;
+               document.getElementById('wind-direction').innerHTML = `${data.wind.deg}, ${App.degreeToDirection(data.wind.deg)}`;
+               document.getElementById('date-of-response').innerHTML = new Date(data.dt)
+
+
+               console.log(data.dt)
+               console.log(new Date(data.dt).toLocaleString())
             })
             .catch(err => {
                console.log(err)             
